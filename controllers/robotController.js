@@ -2,10 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Robot = require('../models/robot');
 
-router.get('/new', (req,res) => {
-	res.render('new.ejs')
 
-})
 
 router.get('/', (req, res) => {
 
@@ -23,7 +20,10 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/new', (req,res) => {
+	res.render('new.ejs')
 
+})
 
 
 router.post('/', (req, res) => {
