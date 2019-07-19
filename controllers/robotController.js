@@ -60,21 +60,42 @@ router.get('/:id', (req, res) => {
 });
 
 
-// router.put('/:id', (req,res) => {
-// 	console.log(req.body, 'in put route');
+
+//EDIT
+router.get('/:id/edit', (req, res) => {
+
+  Robot.findById(req.params.id, (err, robot) => {
+    console.log(robot)
+    if(err){
+      console.log(err);
+    } else {
+      res.render('edit.ejs', {
+        Robot: robot
+      })
+    }
+  })
 
 
-// Robot.updateOne({
-// 	_id: req.params.id 
-// },
-// 	req.body, (err, response) => {
-// 	if(err){
-// 		res.send(err);
-// 	} else{
-// 		console.log(response);
-// 		res.redirect('/robots')
-// 	}
-// })
-// })
+});
+
+
+
+//UPDATE
+router.put('/:id', (req,res) => {
+	console.log(req.body, 'in put route');
+
+
+Robot.updateOne({
+	_id: req.params.id 
+},
+	req.body, (err, response) => {
+	if(err){
+		res.send(err);
+	} else{
+		console.log(response);
+		res.redirect('/robots')
+	}
+})
+})
 
 module.exports = router

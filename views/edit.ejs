@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Edit Robot Page</h1>
+	<form method='POST' action="/robots/<%=Robot._id%>?_method=PUT">
+		Name: <input type="text" name="name" value="<%=Robot.name%>"><br>
+		Color:<input type="text" name="color" value="<%=Robot.color%>"><br>
+		<input type="submit" name="" value="Submit Changes">
+	</form>
+</body>
+</html>
