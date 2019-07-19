@@ -4,11 +4,13 @@ const Robot = require('../models/robot');
 
 router.get('/new', (req,res) => {
 	res.render('new.ejs')
-}
+})
+
+
 
 router.put('/:id', (req,res) => {
 	console.log(req.body, 'in put route');
-})
+
 
 Robot.updateOne({
 	_id: req.params.id 
@@ -21,3 +23,6 @@ Robot.updateOne({
 		res.redirect('/robots')
 	}
 })
+})
+
+module.exports = router

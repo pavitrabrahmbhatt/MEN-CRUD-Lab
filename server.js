@@ -15,3 +15,7 @@ app.use(methodOverride('_method'));
 
 
 app.use('/robots', robotController)
+
+app.listen(3000, () => {
+	console.log("server is running");
+})		
