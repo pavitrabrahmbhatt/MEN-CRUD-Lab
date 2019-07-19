@@ -10,7 +10,11 @@
 		<li><%=Robot.color%></li>
 	</ul>
 	
-		<a href="/robots/<%=Robot._id%>/edit">Click Here to Edit</a> 
+		<a href="/robots/<%=Robot._id%>/edit">Click Here to Edit</a>
+
+		<form action="/robots/<%=Robot._id%>?_method=DELETE" method="POST">
+			<input type="submit" name="" value="DELETE">
+		</form> 
 
 	
 

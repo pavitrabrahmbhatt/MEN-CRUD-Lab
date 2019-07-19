@@ -98,4 +98,24 @@ Robot.updateOne({
 })
 })
 
+//DELETE
+
+router.delete('/:id', (req, res,next) => {
+
+Robot.deleteOne({
+	_id: req.params.id
+},
+	(err,response) => {
+		if(err){
+			next(err);
+		} else{
+  			res.redirect('/robots');  //redirect back to index route
+		}
+	})
+});
+
+
+
+
+
 module.exports = router
