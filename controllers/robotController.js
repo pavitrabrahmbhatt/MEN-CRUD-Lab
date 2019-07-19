@@ -7,6 +7,24 @@ router.get('/new', (req,res) => {
 
 })
 
+router.get('/', (req, res) => {
+
+  // First tell teh model to do something
+  Robot.find({}, (err, robots) => {
+    console.log(robots, "<- an array of objects index route")
+    // fruits is the response from the database
+    if(err){
+      res.send(err);
+    } else {
+      res.render('index.ejs', {
+        Robots: robots // thsi fruits comes from the callback
+      });
+    }
+  });
+});
+
+
+
 
 router.post('/', (req, res) => {
   // contents of the form
